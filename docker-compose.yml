@@ -1,0 +1,18 @@
+services:
+  nodecg:
+    restart: always
+    image: "ghcr.io/nodecg/nodecg:2.2.2"
+    ports:
+      - "${NODECG_PORT}:9090"
+    volumes:
+      - "./nodecg/cfg:/opt/nodecg/cfg"
+      - "./nodecg/bundles:/opt/nodecg/bundles"
+      - "./nodecg/data/db:/opt/nodecg/db"
+      - "./nodecg/data/assets:/opt/nodecg/assets"
+      # - "./nodecg/overrides/dashboard-img/${DASHBOARD_IMG}:/opt/nodecg/dist/dashboard/img"
+      # - "./nodecg/overrides/dashboard.js:/opt/nodecg/dist/dashboard.js"
+    env_file:
+      - .env
+    logging:
+      options:
+        max-size: 10m
