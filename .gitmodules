@@ -1,0 +1,3 @@
+[submodule "nodecg/bundles/nodecg-abw-bundle"]
+	path = nodecg/bundles/nodecg-abw-bundle
+	url = https://github.com/abwakeboard/nodecg-abw-bundle.git
